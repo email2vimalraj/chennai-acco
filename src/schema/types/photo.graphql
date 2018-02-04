@@ -1,0 +1,22 @@
+type Photo {
+  _id: ID!
+  name: String!
+  filePath: String!
+  property: Property!
+  createdAt: String
+  updatedAt: String
+}
+
+type Query {
+  photos(propertyId: String!): [Photo]
+}
+
+type Mutation {
+  addPhoto(input: PhotoInput): Photo
+}
+
+input PhotoInput {
+  name: String!
+  filePath: String!
+  property: String!
+}

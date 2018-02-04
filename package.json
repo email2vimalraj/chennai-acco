@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "start": "babel-node ./src/server.js",
-    "start:local": "nodemon ./src/server.js --exec babel-node",
+    "start:local": "NODE_ENV=local nodemon ./src/server.js --exec babel-node",
     "lint": "eslint ./src/**/*.js"
   },
   "engines": {

@@ -3,6 +3,7 @@ type Property {
   name: String!
   description: String
   user: User
+  photos: [Photo]
   rate: String
   currency: String
   address: String
