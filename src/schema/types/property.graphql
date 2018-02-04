@@ -1,0 +1,42 @@
+type Property {
+  _id: ID!
+  name: String!
+  description: String
+  user: User
+  rate: String
+  currency: String
+  address: String
+  latitude: String
+  longitude: String
+  bedroomCount: Int
+  accomadatesCount: Int
+  startDate: String
+  endDate: String
+  status: String
+  createdAt: String
+  updatedAt: String
+}
+
+type Query {
+  properties: [Property]
+}
+
+type Mutation {
+  addProperty(input: PropertyInput): Property
+}
+
+input PropertyInput {
+  name: String!
+  description: String
+  user: String!
+  rate: String
+  currency: String
+  address: String
+  latitude: String
+  longitude: String
+  bedroomCount: Int
+  accomadatesCount: Int
+  startDate: String
+  endDate: String
+  status: String
+}

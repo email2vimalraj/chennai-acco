@@ -1,0 +1,30 @@
+type User {
+  _id: ID!
+  name: String!
+  email: String!
+  username: String!
+  hashedPassword: String
+  salt: String
+  address: String
+  provider: String
+  properties: [Property]
+  createdAt: String
+  updatedAt: String
+}
+
+type Query {
+  users: [User]
+}
+
+type Mutation {
+  addUser(input: UserInput): User
+}
+
+input UserInput {
+  name: String!
+  email: String!
+  username: String!
+  password: String!
+  address: String
+  provider: String
+}
