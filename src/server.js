@@ -22,8 +22,8 @@ const startServer = async () => {
   // app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
 
   // Start the server
-  app.listen(3000, () => {
-    logger.info('Go to http://localhost:3000/graphiql to run queries!'); // eslint-disable-line no-console
+  app.listen(process.env.PORT || 3000, () => {
+    logger.info(`Go to http://localhost:${process.env.PORT || 3000}/graphiql to run queries!`); // eslint-disable-line no-console
   });
 };
 
