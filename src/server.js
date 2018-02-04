@@ -18,7 +18,8 @@ const startServer = async () => {
   app.use('/graphql', bodyParser.json(), graphqlExpress(buildOptions));
 
   // GraphiQL, a visual editor for queries
-  app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
+  app.use('/', graphiqlExpress({ endpointURL: '/graphql' }));
+  // app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
 
   // Start the server
   app.listen(3000, () => {
