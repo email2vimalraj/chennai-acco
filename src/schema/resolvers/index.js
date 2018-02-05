@@ -5,6 +5,7 @@ const resolvers = [
   require('./user'),
   require('./property'),
   require('./photo'),
+  require('./booking'),
 ];
 
 module.exports = mergeResolvers(resolvers);

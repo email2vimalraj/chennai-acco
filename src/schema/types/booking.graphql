@@ -1,0 +1,32 @@
+type Booking {
+  user: User!
+  property: Property!
+  checkInDate: String!
+  checkOutDate: String!
+  amountPaid: String!
+  status: String
+  createdAt: String
+  updatedAt: String
+}
+
+type Query {
+  bookings(filter: BookingFilter): [Booking]
+}
+
+type Mutation {
+  addBooking(input: BookingInput): Booking
+}
+
+input BookingFilter {
+  user: String
+  property: String
+}
+
+input BookingInput {
+  user: String!
+  property: String!
+  amountPaid: String!
+  checkInDate: String!
+  checkOutDate: String!
+  status: String
+}
