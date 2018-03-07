@@ -4,7 +4,7 @@ type Property {
   description: String
   user: User
   photos: [Photo]
-  price: String
+  price: Int
   currency: String
   address: String
   latitude: String
@@ -22,7 +22,7 @@ type Property {
 }
 
 type Query {
-  properties: [Property]
+  properties(ascSortBy: String, descSortBy: String, limit: Int): [Property]
 }
 
 type Mutation {

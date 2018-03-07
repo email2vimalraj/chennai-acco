@@ -37,7 +37,7 @@ const PropertySchema = db.Schema({
     type: Schema.Types.ObjectId,
     ref: 'User',
   },
-  price: String,
+  price: Number,
   currency: String,
   address: String,
   latitude: String,

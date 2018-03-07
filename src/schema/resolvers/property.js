@@ -14,8 +14,22 @@ module.exports = {
   },
 
   Query: {
-    properties: async () => {
-      const res = await Property.find();
+    properties: async (root, args) => {
+      let query = Property.find();
+      if (args.ascSortBy) {
+        const sortOption = {};
+        sortOption[args.ascSortBy] = 1;
+        query = query.sort(sortOption);
+      }
+      if (args.descSortBy) {
+        const sortOption = {};
+        sortOption[args.descSortBy] = -1;
+        query = query.sort(sortOption);
+      }
+      if (args.limit) {
+        query = query.limit(args.limit);
+      }
+      const res = await query.exec();
       return res;
     },
   },
