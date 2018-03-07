@@ -12,7 +12,7 @@ type Property {
   bedroomCount: Int
   bathroomCount: Int
   accomadatesCount: Int
-  area: String
+  area: Int
   rating: Int
   startDate: String
   endDate: String

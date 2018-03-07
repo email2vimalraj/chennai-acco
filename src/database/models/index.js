@@ -45,7 +45,7 @@ const PropertySchema = db.Schema({
   bedroomCount: Number,
   bathroomCount: Number,
   accomadatesCount: Number,
-  area: String,
+  area: Number,
   rating: Number,
   startDate: Date,
   endDate: Date,
