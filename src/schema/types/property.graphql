@@ -4,13 +4,16 @@ type Property {
   description: String
   user: User
   photos: [Photo]
-  rate: String
+  price: String
   currency: String
   address: String
   latitude: String
   longitude: String
   bedroomCount: Int
+  bathroomCount: Int
   accomadatesCount: Int
+  area: String
+  rating: Int
   startDate: String
   endDate: String
   status: String
