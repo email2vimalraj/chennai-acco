@@ -23,6 +23,7 @@ type Property {
 
 type Query {
   properties(ascSortBy: String, descSortBy: String, limit: Int): [Property]
+  property(id: String): Property
 }
 
 type Mutation {

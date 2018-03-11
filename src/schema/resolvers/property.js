@@ -32,6 +32,11 @@ module.exports = {
       const res = await query.exec();
       return res;
     },
+    property: async (root, args) => {
+      const query = Property.findOne({ _id: args.id });
+      const res = await query.exec();
+      return res;
+    },
   },
 
   Mutation: {
