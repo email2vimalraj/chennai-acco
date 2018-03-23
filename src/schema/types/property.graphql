@@ -34,14 +34,19 @@ input PropertyInput {
   name: String!
   description: String
   user: String!
-  rate: String
+  price: Int
   currency: String
   address: String
   latitude: String
   longitude: String
   bedroomCount: Int
+  bathroomCount: Int
   accomadatesCount: Int
+  area: Int
+  rating: Int
   startDate: String
   endDate: String
   status: String
+  createdAt: String
+  updatedAt: String
 }
