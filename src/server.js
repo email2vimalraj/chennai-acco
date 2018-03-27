@@ -42,7 +42,7 @@ const startServer = async () => {
       }
 
       const hostName = process.env.NODE_ENV === 'local' ? 'http://localhost' : 'https://chennai-acco-server.herokuapp.com';
-      const hostPort = process.env.PORT || 3001;
+      const hostPort = process.env.NODE_ENV === 'local' ? 3001 : '';
 
       const args = {
         name: req.body.filename,
