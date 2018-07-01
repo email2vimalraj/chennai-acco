@@ -1,3 +1,7 @@
 node_modules/
 src/public/
 *.log
+/*db-data
+diagram.svg
+/src/public/*.jpg
+/src/public/*.jpeg
