@@ -1,5 +1,5 @@
 {
-  "extends": "airbnb-base",
+  "extends": ["airbnb-base", "prettier"],
   "rules": {
     "global-require": "off",
     "import/no-dynamic-require": "off",
@@ -9,10 +9,10 @@
     "object-curly-newline": "off",
     "no-underscore-dangle": "off",
     "no-multi-spaces": [
-        "error",
-        {
-            "ignoreEOLComments": true
-        }
+      "error",
+      {
+        "ignoreEOLComments": true
+      }
     ]
   }
 }

@@ -1,4 +1,4 @@
-endpoint: https://eu1.prisma.sh/vimalraj-selvam-a2323f/chennai-acco-server/dev
+endpoint: ${env:PRISMA_ENDPOINT}
 datamodel: datamodel.graphql
 hooks:
   post-deploy:

@@ -1,9 +1,10 @@
 const Query = {
   user: (_, args, context, info) => {
+    const { id } = args
     return context.prisma.query.user(
       {
         where: {
-          id: args.id
+          id
         }
       },
       info
@@ -53,7 +54,7 @@ const Query = {
     )
   },
 
-  bookings: (_args, context, info) => {
+  bookings: (_, args, context, info) => {
     const { where, orderBy, skip, after, before, first, last } = args
     return context.prisma.query.bookings(
       {
