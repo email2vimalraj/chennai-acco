@@ -1,5 +1,4 @@
-/node_modules
-/logs
 *.log
-/*db-data
-diagram.svg
+node_modules/
+src/generated/
+src/public/

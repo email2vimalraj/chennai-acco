@@ -1,0 +1,72 @@
+type User {
+  id: ID! @unique
+  email: String! @unique
+  password: String!
+  name: String!
+  inviteToken: String
+  inviteAccepted: Boolean! @default(value: "true")
+  emailConfirmed: Boolean! @default(value: "true")
+  emailConfirmToken: String
+  resetToken: String
+  resetExpires: DateTime
+  deletedAt: DateTime
+  lastLogin: DateTime
+  joinedAt: DateTime!
+  role: Role! @default(value: "USER")
+  properties: [Property!]!
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+type Photo {
+  id: ID! @unique
+  name: String!
+  filePath: String!
+  property: Property!
+}
+
+type Property {
+  id: ID! @unique
+  name: String!
+  description: String
+  user: User
+  photos: [Photo!]!
+  price: Int
+  currency: String
+  address: String
+  latitude: String
+  longitude: String
+  bedroomCount: Int
+  bathroomCount: Int
+  accomadatesCount: Int
+  area: Int
+  rating: Int
+  startDate: String
+  endDate: String
+  status: PropertyStatus
+}
+
+type Booking {
+  id: ID! @unique
+  user: User!
+  property: Property!
+  checkInDate: DateTime!
+  checkOutDate: DateTime!
+  amountPaid: String
+  status: BookingStatus! @default(value: "PENDING")
+}
+
+enum PropertyStatus {
+  AVAILABLE
+  DEFERRED
+  BOOKED
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+}

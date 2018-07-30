@@ -1,0 +1,48 @@
+# import User, Property, Photo, Booking from './generated/prisma.graphql'
+# import PropertyWhereInput, PropertyOrderByInput from './generated/prisma.graphql'
+# import Query.*, Mutation.* from "../node_modules/graphql-authentication/schema.graphql"
+
+type Query {
+  user(id: ID!): User
+  properties(
+    where: PropertyWhereInput
+    orderBy: PropertyOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Property]
+  property(id: String): Property
+  photos(propertyId: String!): [Photo]
+  bookings(
+    where: BookingWhereInput
+    orderBy: BookingOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Booking]
+}
+
+type Mutation {
+  addProperty(input: PropertyCreateInput!): Property
+  addPhoto(input: PhotoCreateInput!): Photo
+  addBooking(input: BookingCreateInput!): Booking
+}
+
+type User {
+  id: ID!
+  email: String!
+  name: String!
+  inviteAccepted: Boolean!
+  emailConfirmed: Boolean!
+  deletedAt: DateTime
+  lastLogin: DateTime
+  joinedAt: DateTime!
+
+  # Custom field
+  role: Role!
+  properties: [Property!]!
+}
