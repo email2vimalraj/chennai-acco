@@ -66,7 +66,7 @@ server.post('/upload', async (req, res) => {
       }
     }`
 
-    const result = await fetch(`${hostName}:${hostPort}`, {
+    const result = await fetch(`${hostName}:${hostPort}/graphql`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query })
@@ -87,7 +87,9 @@ const corsOptions = {
 }
 
 const serverOptions = {
-  cors: corsOptions
+  cors: corsOptions,
+  endpoint: '/graphql',
+  playground: '/playground'
 }
 
 server.start(serverOptions, () =>
